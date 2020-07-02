@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "drzave"
+    }
+  },
+  "defaultProject": "drzave",
+  "cli": {
+    "analytics": false
+  }
 }

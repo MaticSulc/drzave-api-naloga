@@ -1,0 +1,28 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table table-striped table-responsive-md table-dark table-hover">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let country"> {{country.id}} </td>
+      </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let country"> {{country.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="capital">
+        <th mat-header-cell *matHeaderCellDef> Capital City </th>
+        <td mat-cell *matCellDef="let country"> {{country.capitalCity}} </td>
+      </ng-container>
+      <ng-container matColumnDef="region">
+        <th mat-header-cell *matHeaderCellDef> Region </th>
+        <td mat-cell *matCellDef="let country"> {{country.region.value}} </td>
+      </ng-container>
+      <ng-container matColumnDef="income">
+        <th mat-header-cell *matHeaderCellDef> Income Level </th>
+        <td mat-cell *matCellDef="let country"> {{country.incomeLevel.value}} </td>
+      </ng-container>
+      <ng-container matColumnDef="details">
+        <th mat-header-cell *matHeaderCellDef> Show Details </th>
+        <td mat-cell *matCellDef="let country"> <button type="button" class="btn btn-link" (click)="addParams(country.id)"><div class="fa fa-search"></div></button> </td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
