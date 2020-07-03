@@ -24,7 +24,7 @@ export class CountryListComponent implements OnInit {
   displayedColumns: string[] = ['name', 'capitalCity', 'region', 'income', 'details'];
   dataSource = new MatTableDataSource<any>();
   expandedElement: any | null;
-  sorting: {};
+  sorting = {};
 
   @ViewChild(MatSort) sort: MatSort;
   
@@ -36,10 +36,9 @@ export class CountryListComponent implements OnInit {
       let param = this.checkParams();
       if(sortinfo){
         let el = document.getElementById(sortinfo.column);
-        console.log(el)
         el.click();
         if(sortinfo.type === "desc"){
-          el.click();
+          el.click();       //double click on row is desc
         }
         
       }
@@ -81,10 +80,9 @@ export class CountryListComponent implements OnInit {
     this.sorting = 
     {
       column: this.sort.active,
-      type: this.sort.direction
-
-
+      type: this.sort.direction.toString()
     }
+    
     localStorage.setItem("sorting", JSON.stringify(this.sorting));
   }
   checkParams(){

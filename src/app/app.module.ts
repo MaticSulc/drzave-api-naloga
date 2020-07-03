@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { LayoutsComponent } from './layouts/layouts.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CountryDataService ],
   bootstrap: [AppComponent]
