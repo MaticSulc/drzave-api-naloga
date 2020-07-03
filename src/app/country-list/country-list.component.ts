@@ -24,7 +24,7 @@ export class CountryListComponent implements OnInit {
   displayedColumns: string[] = ['name', 'capitalCity', 'region', 'income', 'details'];
   dataSource = new MatTableDataSource<any>();
   expandedElement: any | null;
-  param: string;
+  sorting: {};
 
   @ViewChild(MatSort) sort: MatSort;
   
@@ -32,7 +32,18 @@ export class CountryListComponent implements OnInit {
 
   ngOnInit(){ 
     setTimeout(() => {
+      let sortinfo = JSON.parse(localStorage.getItem("sorting"));
       let param = this.checkParams();
+      if(sortinfo){
+        let el = document.getElementById(sortinfo.column);
+        console.log(el)
+        el.click();
+        if(sortinfo.type === "desc"){
+          el.click();
+        }
+        
+      }
+      
       if(param){
       let el = document.getElementById(param);
       el.scrollIntoView({behavior: "smooth", block: "start"});
@@ -44,7 +55,7 @@ export class CountryListComponent implements OnInit {
     
  
 
-    this.dataSource.sort = this.sort;
+    
     this.countrydataservice.getCountryList()
     .subscribe(data => {
       for(let i=0;i<50;i++){
@@ -54,6 +65,9 @@ export class CountryListComponent implements OnInit {
     });
     
   }  
+
+ 
+
   addParams(id:string){
     this.router.navigate(['./'],
        { 
@@ -64,9 +78,19 @@ export class CountryListComponent implements OnInit {
 
   sortData(event){
     this.dataSource.sort = this.sort;
-    console.log(this.sort);
+    this.sorting = 
+    {
+      column: this.sort.active,
+      type: this.sort.direction
+
+
+    }
+    localStorage.setItem("sorting", JSON.stringify(this.sorting));
   }
   checkParams(){
+
+
+
     let val;
     this.route.queryParams.subscribe(params => {
       val = params['id'];

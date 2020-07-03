@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import { CountryListComponent } from '../country-list/country-list.component';
 
 
 @Component({
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutsComponent implements OnInit {
 
+  @Input() sorting: {};
+ 
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+   console.log(this.sorting);
   }
 
 }
