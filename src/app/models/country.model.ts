@@ -3,5 +3,4 @@ export class Country {
     capital: string;
     region: string;
     incomeLevel: string;
-
 }

@@ -11,12 +11,16 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { AppRoutingModule } from './app-routing.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { LayoutsComponent } from './layouts/layouts.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CountryListComponent
-  ],
+    CountryListComponent,
+    LayoutsComponent,
+    ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -26,6 +30,8 @@ import { AppRoutingModule } from './app-routing.module';
     MatProgressSpinnerModule,
     MatTableModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
   ],
   providers: [CountryDataService ],
   bootstrap: [AppComponent]

@@ -1,4 +1,17 @@
 table {
-    width: 100%;
-  }
-  
+  width: 100%;
+}
+
+tr.example-detail-row {
+  height: 2px;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
