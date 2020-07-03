@@ -1,27 +1,16 @@
 # Drzave
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+API:
+```
+http://api.worldbank.org/v2/country/?format=json
+```
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+CheckList:
+- [x] Naredi tabelo v katero se bojo prikazovali naslednji podatki: name, capitalCity, region['value'], incomeLevel['value'].
+- [ ] S klikom na puščico (Show Details) naj se prikažejo podrobnosti države (popup ali slider). GET http://api.worldbank.org/v2/country/br?format=json (br - iso2Code)
+- [x] S klikom na Show Details, v URL-ju vstavi ID "query parameter" ID tako da pri refreshanju strani, naj se VIEW scroll-a do tistega reda ki je v "query parametru" (če se podrobnosti prikazujejo z sliderjem), ali pa naj odpre tisto državo v popup-u.
+- [ ] S klikom na header tabele (Name, Capital City...), naj se podatki v tabeli sortirajo. (ASC/DESC)
+- [ ] Naredi funkcijo za shranjevanje layout-a za sortiranje podatkov, v LOCAL STORAGE - u.
+- [ ] Layout se shranjuje, tako da v inputu (New Layout Input) dodamo ime layouta. Nato s klikom na + shrani. 
+- [ ] Nad tabelo s podatkimi naredi DropDown (Select), v katerega se bojo prikazovale vse sort layoute shranjene v LOCAL STORAGE-u.
+- [ ] Z klikom na enega od layout-ov omogoči prikaz podatkov sortirani po vrstnem redu, ki smo ga izbrali.
