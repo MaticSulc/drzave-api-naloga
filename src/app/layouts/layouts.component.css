@@ -1,12 +1,9 @@
-.example-form {
+.form {
     min-width: 150px;
     max-width: 500px;
-    width: 100%;
+    width: 50%;
   }
-  
-  .example-full-width {
-    width: 100%;
-  }
+
 
   .button-form{
       margin-left: 3px;
