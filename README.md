@@ -12,5 +12,5 @@ CheckList:
 - [x] S klikom na header tabele (Name, Capital City...), naj se podatki v tabeli sortirajo. (ASC/DESC)
 - [x] Naredi funkcijo za shranjevanje layout-a za sortiranje podatkov, v LOCAL STORAGE - u.
 - [x] Layout se shranjuje, tako da v inputu (New Layout Input) dodamo ime layouta. Nato s klikom na + shrani. 
-- [ ] Nad tabelo s podatkimi naredi DropDown (Select), v katerega se bojo prikazovale vse sort layoute shranjene v LOCAL STORAGE-u.
-- [ ] Z klikom na enega od layout-ov omogoči prikaz podatkov sortirani po vrstnem redu, ki smo ga izbrali.
+- [x] Nad tabelo s podatkimi naredi DropDown (Select), v katerega se bojo prikazovale vse sort layoute shranjene v LOCAL STORAGE-u.
+- [x] Z klikom na enega od layout-ov omogoči prikaz podatkov sortirani po vrstnem redu, ki smo ga izbrali.
