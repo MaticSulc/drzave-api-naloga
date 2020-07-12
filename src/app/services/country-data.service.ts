@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Country } from '../models/country.model';
 
 const API_URL = "https://api.worldbank.org/v2/country/?format=json";
+const API_DETAILS_URL = "http://api.worldbank.org/v2/country/"
 
 @Injectable()
 export class CountryDataService {
@@ -13,6 +14,10 @@ export class CountryDataService {
 
   getCountryList(): Observable<Country[]>{
     return this.http.get<Country[]>(API_URL);
+  }
+
+  getCountryDetails(id): Observable<Country[]>{
+    return this.http.get<Country[]>(API_URL+id+"?format=json");
   }
 
 }

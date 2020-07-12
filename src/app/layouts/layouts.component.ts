@@ -1,5 +1,4 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { CountryListComponent } from '../country-list/country-list.component';
 
 
 @Component({
@@ -9,17 +8,33 @@ import { CountryListComponent } from '../country-list/country-list.component';
 })
 export class LayoutsComponent implements OnInit {
 
-  layout_list;
+  layout_list = [];
 
   constructor() { }
 
-  ngOnInit() {
-    let layouts = localStorage.getItem("layouts");
-    if(layouts) JSON.parse(layouts);
-    this.layout_list = layouts;
-    
 
+    ngOnInit(){
+      let layout_local = localStorage.getItem("layouts");
+      if(layout_local){
+        let parsed = JSON.parse(layout_local);
+        this.layout_list = parsed;
+      } 
+    }
+    
+  loadLayout(layoutname: string){
+    let all_layouts = localStorage.getItem("layouts");
+    if(all_layouts) { //if exists
+      let parsed = JSON.parse(all_layouts);
+      let sort_obj = parsed.find(el => el.name === layoutname);
+      let el = document.getElementById(sort_obj.column);
+      el.click();
+        if(sort_obj.type === "desc"){ //needs a better logic, works for now
+          el.click();       //double click on row is desc
+        }
+
+    }
   }
+  
   saveLayout(){
     let currentSort = JSON.parse(localStorage.getItem("sorting"));
     var inputElement = <HTMLInputElement>document.getElementById('layoutName');
@@ -38,7 +53,15 @@ export class LayoutsComponent implements OnInit {
     }
     layouts.push(newobj);
     localStorage.setItem("layouts", JSON.stringify(layouts));
-  }
+    //update
+    let layout_local = localStorage.getItem("layouts");
+    if(layout_local){
+      let parsed = JSON.parse(layout_local);
+      this.layout_list = parsed;
+    } 
+  
+
 
 
  }
+}

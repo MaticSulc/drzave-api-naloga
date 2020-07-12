@@ -1,10 +1,13 @@
-<form class="form form-group">
-    <mat-form-field class="">
-      <select matNativeControl>
-        <option value="test"> Test Option </option>
+  <form class="form-inline">
+    <div class="form-group">
+      <select matNativeControl (change)="loadLayout($event.target.value)">
+        <option *ngFor="let layout of layout_list"> {{layout.name}} </option>
       </select>
       <input class="form-control" id="layoutName" matInput value="New Layout Input">
-    </mat-form-field>
-    <button type="button" class=" button-form btn btn-primary" (click)="saveLayout(); $event.stopPropagation()">Save</button>
-</form>
 
+    </div>
+  
+
+  
+    <button type="button" class=" button-form btn btn-primary" (click)="saveLayout(); $event.stopPropagation()">+</button>
+  </form>

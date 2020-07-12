@@ -32,8 +32,11 @@ export class CountryListComponent implements OnInit {
 
   ngOnInit(){ 
     setTimeout(() => {
-      let sortinfo = JSON.parse(localStorage.getItem("sorting"));
       let param = this.checkParams();
+      /*
+      //SORT ON PAGE LOAD (REMEMBER OLD SORT)
+      let sortinfo = JSON.parse(localStorage.getItem("sorting"));
+      
       if(sortinfo){
         let el = document.getElementById(sortinfo.column);
         el.click();
@@ -42,6 +45,7 @@ export class CountryListComponent implements OnInit {
         }
         
       }
+      */
       
       if(param){
       let el = document.getElementById(param);
@@ -58,7 +62,9 @@ export class CountryListComponent implements OnInit {
     this.countrydataservice.getCountryList()
     .subscribe(data => {
       for(let i=0;i<50;i++){
+        
         countries.data.push(data[1][i]);
+
         this.dataSource = countries;
       }
     });
@@ -73,6 +79,7 @@ export class CountryListComponent implements OnInit {
         relativeTo: this.route, 
         queryParams: {id: id},
       })
+      
   }
 
   sortData(event){
