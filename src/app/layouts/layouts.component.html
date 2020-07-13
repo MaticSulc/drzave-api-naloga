@@ -1,7 +1,7 @@
   <form class="form-inline">
     <div class="form-group">
       <select matNativeControl (change)="loadLayout($event.target.value)">
-        <option *ngFor="let layout of layout_list"> {{layout.name}} </option>
+        <option *ngFor="let layout of layoutList"> {{layout.name}} </option>
       </select>
       <input class="form-control" id="layoutName" matInput value="New Layout Input">
     </div>
