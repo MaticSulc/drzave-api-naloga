@@ -4,10 +4,6 @@
         <option *ngFor="let layout of layout_list"> {{layout.name}} </option>
       </select>
       <input class="form-control" id="layoutName" matInput value="New Layout Input">
-
     </div>
-  
-
-  
     <button type="button" class=" button-form btn btn-primary" (click)="saveLayout(); $event.stopPropagation()">+</button>
   </form>
